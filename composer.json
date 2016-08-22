@@ -1,0 +1,21 @@
+{
+    "name": "fabricio/chimpanze",
+    "description": "testes mail chimp",
+    "require": {
+        "drewm/mailchimp-api": "2.2.2",
+        "ramsey/array_column": "^1.1",
+        "bocharsky-bw/arrayzy": "^0.6.1",
+        "phpunit/phpunit": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "max\\mailchimp\\": "library/mailchimp"
+        }
+    },
+    "authors": [
+        {
+            "name": "baricio",
+            "email": "baricio@gmail.com"
+        }
+    ]
+}
