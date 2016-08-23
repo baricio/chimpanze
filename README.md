@@ -14,7 +14,7 @@ Installation
 Você pode instalar chimpanze usando Composer:
 
 ```
-composer require baricio/chimpanze
+composer require fabricio/chimpanze
 ```
 
 Você vai precisar:
