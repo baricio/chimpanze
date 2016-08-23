@@ -1,6 +1,6 @@
 {
     "name": "fabricio/chimpanze",
-    "description": "testes mail chimp",
+    "description": "Uso simples do MailChimp API v3, em PHP",
     "require": {
         "drewm/mailchimp-api": "2.2.2",
         "ramsey/array_column": "^1.1"
