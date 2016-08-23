@@ -1,6 +1,3 @@
-# chimpanze
-mail chimp access API
-
 Chimpanze MailChimp API
 =======================
 
