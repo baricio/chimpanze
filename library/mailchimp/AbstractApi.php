@@ -15,7 +15,7 @@ abstract class AbstractApi{
 
 	public function success(){
 		$response = $this->api->getLastResponse();
-		return ($response['headers']['http_code'] == 200);
+		return (boolean)($response['headers']['http_code'] == 200);
 	}
 
 	public function getLastError(){

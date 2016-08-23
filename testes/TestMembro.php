@@ -11,18 +11,31 @@ use \max\mailchimp\config\ListaName;
 class TestMembro extends PHPUnit_Framework_TestCase 
 {
 
-	public function TestEncontraEmail(){
+	public function testMembroExistente(){
 
 		$lista = new Lista();
-		$pedido = $lista->getByName(ListaName::$PEDIDO);
-
-		$membro = new Membro($pedido);
+		$pedido_id = $lista->getByName(ListaName::$MAX);
+		$membro = new Membro($pedido_id);
 
 		$dadosMembro = new \max\mailchimp\entity\Membro();
-
 		$dadosMembro->setEmailAddress('danival@gmail.com');
-
 		$retorno = $membro->find($dadosMembro->getEmailAddress());
+
+		$this->assertTrue($membro->success());
+
+	}
+
+	public function testMembroNaoExistente(){
+
+		$lista = new Lista();
+		$pedido_id = $lista->getByName(ListaName::$MAX);
+		$membro = new Membro($pedido_id);
+
+		$dadosMembro = new \max\mailchimp\entity\Membro();
+		$dadosMembro->setEmailAddress('naoexisto@gmail.com');
+		$retorno = $membro->find($dadosMembro->getEmailAddress());
+
+		$this->isTrue($membro->success());
 
 	}
 

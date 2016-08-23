@@ -24,15 +24,20 @@ class Membro extends AbstractApi{
 	}
 
 	public function put($membro_id, \max\mailchimp\entity\Membro $membro){
-		return $this->api->put($this->uri + '/' + $membro_id,$membro->send());
+		return $this->api->put($this->uri . '/' . $membro_id,$membro->send());
+	}
+
+	public function patch($membro_id, \max\mailchimp\entity\Membro $membro){
+		var_dump($this->uri . '/' . $membro_id);
+		return $this->api->patch($this->uri . '/' . $membro_id,$membro->send());
 	}
 
 	public function delete($membro_id){
-		return $this->api->delete($this->uri + '/' + $membro_id);
+		return $this->api->delete($this->uri . '/' . $membro_id);
 	}
 
 	public function find($email){
-		return $this->api->get($this->uri + '/' + md5($email));
+		return $this->api->get($this->uri . '/' . md5($email));
 	}
 
 }

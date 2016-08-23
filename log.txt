@@ -1,0 +1,37 @@
+Array
+(
+    [headers] => Array
+        (
+            [url] => https://us11.api.mailchimp.com/3.0/lists?
+            [content_type] => 
+            [http_code] => 0
+            [header_size] => 0
+            [request_size] => 0
+            [filetime] => -1
+            [ssl_verify_result] => 1
+            [redirect_count] => 0
+            [total_time] => 0.688
+            [namelookup_time] => 0.016
+            [connect_time] => 0.063
+            [pretransfer_time] => 0
+            [size_upload] => 0
+            [size_download] => 0
+            [speed_download] => 0
+            [speed_upload] => 0
+            [download_content_length] => -1
+            [upload_content_length] => -1
+            [starttransfer_time] => 0
+            [redirect_time] => 0
+            [redirect_url] => 
+            [primary_ip] => 104.105.128.187
+            [certinfo] => Array
+                (
+                )
+
+            [primary_port] => 443
+            [local_ip] => 192.168.0.33
+            [local_port] => 54405
+        )
+
+    [body] => 
+)

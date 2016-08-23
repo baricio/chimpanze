@@ -27,4 +27,14 @@ class InterestGroup extends AbstractApi{
 		return array();
 	}
 
+	public function getByName($nome){
+		$lists = $this->get();
+
+		if($lists){
+			return $lists[$nome];
+		}
+
+		return '';
+	}
+
 }
