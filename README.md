@@ -49,6 +49,7 @@ $membro = new Membro($lsita_id);
 
 $dadosMembro = new \max\mailchimp\entity\Membro();
 $dadosMembro->setEmailAddress('novomembro@gmail.com');
+$dadosMembro->setNome('novo','membrp'); //nome e sobrenome
 $retorno = $membro->find($dadosMembro->getEmailAddress());
 
 if($membro->success()){
@@ -143,32 +144,6 @@ if($membro->success()){
 	die('membro atualizado com sucesso');
 }else{
 	die('Falha ao atualizar cliente');
-}
-```
-
-Remove a list member using the `delete` method:
-
-```php
-$list_id = 'b1234346';
-$subscriber_hash = $MailChimp->subscriberHash('davy@example.com');
-
-$MailChimp->delete("lists/$list_id/members/$subscriber_hash");
-```
-
-Quickly test for a successful action with the `success()` method:
-
-```php
-$list_id = 'b1234346';
-
-$result = $MailChimp->post("lists/$list_id/members", [
-				'email_address' => 'davy@example.com',
-				'status'        => 'subscribed',
-			]);
-
-if ($MailChimp->success()) {
-	print_r($result);	
-} else {
-	echo $MailChimp->getLastError();
 }
 ```
 
