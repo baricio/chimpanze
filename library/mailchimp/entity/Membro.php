@@ -6,6 +6,7 @@ class Membro{
 	private $email_address;
 	private $status;
     private $interests;
+    private $merge_fields;
 
 	public function __construct(){
 		$this->status = 'subscribed';
@@ -20,6 +21,10 @@ class Membro{
 
         if($this->getInterests()){
             $dados['interests'] = $this->getInterests();
+        }
+
+        if($this->getMergeFields()){
+            $dados['merge_fields'] = $this->getMergeFields();
         }
 
 		return $dados;
@@ -93,6 +98,30 @@ class Membro{
     public function setInterests($interests)
     {
         $this->interests = $interests;
+
+        return $this;
+    }
+
+     /**
+     * Gets the value of merge_fields.
+     *
+     * @return mixed
+     */
+    public function getMergeFields()
+    {
+        return $this->merge_fields;
+    }
+
+    /**
+     * Sets the value of merge_fields.
+     *
+     * @param mixed $interests the merge_fields
+     *
+     * @return self
+     */
+    public function setMergeFields($merge_fields)
+    {
+        $this->merge_fields = $merge_fields;
 
         return $this;
     }

@@ -28,7 +28,6 @@ class Membro extends AbstractApi{
 	}
 
 	public function patch($membro_id, \max\mailchimp\entity\Membro $membro){
-		var_dump($this->uri . '/' . $membro_id);
 		return $this->api->patch($this->uri . '/' . $membro_id,$membro->send());
 	}
 
