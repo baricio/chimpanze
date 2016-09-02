@@ -147,6 +147,20 @@ if($membro->success()){
 }
 ```
 
+Remove um email da automacao
+
+```php
+$auto = new Automation();
+$worflow_id = $auto->getByName(AutomationName::$PEDIDO);
+$result = $auto->removeEmail($worflow_id, 'removeemail@gmail.com');
+
+if($auto->success()){
+	die('email removido')
+}else{
+	die('error ao remover email');
+}
+```
+
 Contribuição
 ------------
 
