@@ -27,7 +27,7 @@ class Automation extends AbstractApi {
 		$automations = $this->get();
 
 		if ($automations) {
-			return $automations[$nome];
+			return (isset($automations[$nome])) ? $automations[$nome] : '';
 		}
 
 		return '';
