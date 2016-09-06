@@ -4,6 +4,7 @@ require __DIR__ . "/../vendor/autoload.php";
 
 use \max\mailchimp\Automation;
 use \max\mailchimp\config\AutomationName;
+use \max\mailchimp\WorkflowEmail;
 
 /**
  * Teste de cadastro de membros em uma lista
@@ -35,9 +36,29 @@ class TestAutomation {
 
 	}
 
+	public function testGetEmails() {
+
+		$auto = new Automation();
+		$workflow_id = $auto->getByName(AutomationName::$PEDIDO);
+
+		$workflow_emails = new WorkflowEmail($workflow_id);
+		$dados = $workflow_emails->get();
+
+	}
+
+	public function GetQueueEmails() {
+
+		$auto = new Automation();
+		$workflow_id = $auto->getByName(AutomationName::$PEDIDO);
+
+		$workflow_emails = new WorkflowEmail($workflow_id);
+		$dados = $workflow_emails->queueAllEmails();
+
+		var_dump($dados);
+
+	}
+
 }
 
 $execute = new TestAutomation();
-$execute->testRecuperaAutomations();
-$execute->testGetAutomation();
-$execute->testRemoveEmail();
+$execute->GetQueueEmails();

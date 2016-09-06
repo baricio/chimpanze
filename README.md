@@ -161,6 +161,26 @@ if($auto->success()){
 }
 ```
 
+Pega todos os e-mails da workflow
+
+```php
+$auto = new Automation();
+$workflow_id = $auto->getByName(AutomationName::$PEDIDO);
+
+$workflow_emails = new WorkflowEmail($workflow_id);
+$dados = $workflow_emails->get();
+```
+
+Pega todos os e-mails na fila do workflow
+
+```php
+$auto = new Automation();
+$workflow_id = $auto->getByName(AutomationName::$PEDIDO);
+
+$workflow_emails = new WorkflowEmail($workflow_id);
+$dados = $workflow_emails->queueAllEmails();
+```
+
 Contribuição
 ------------
 

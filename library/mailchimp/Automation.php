@@ -34,6 +34,11 @@ class Automation extends AbstractApi {
 	}
 
 	public function removeEmail($workflow_id, $email) {
+
+		if(empty($workflow_id) || empty($email)){
+			return false;
+		}
+
 		$removed = $this->api->post(
 			'/automations/' . $workflow_id . '/removed-subscribers',
 			array('email_address' => $email)
